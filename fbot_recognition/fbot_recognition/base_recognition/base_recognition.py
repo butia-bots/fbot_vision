@@ -37,6 +37,7 @@ class BaseRecognition(Node):
         subscribers = []
         for source in SOURCES_TYPES:
             if source in self.topicsToSubscribe:
+                self.get_logger().info(f"Subscribing to {self.topicsToSubscribe[source]}")
                 subscribers.append(message_filters.Subscriber(self, SOURCES_TYPES[source], self.topicsToSubscribe[source], qos_profile=self.qosProfile))
         self._synchronizer = message_filters.ApproximateTimeSynchronizer(subscribers,queue_size=1, slop=self.slop)
         self._synchronizer.registerCallback(callbackObject)
