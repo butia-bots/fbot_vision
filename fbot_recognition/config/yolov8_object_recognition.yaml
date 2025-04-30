@@ -16,7 +16,7 @@ yolov8_recognition:
 
     subscribers:
       
-      slop: 0.2
+      slop: 1.0
       qos_profile: 1
 
       image_rgb: /camera/camera/color/image_raw
