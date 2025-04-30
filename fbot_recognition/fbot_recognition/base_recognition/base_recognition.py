@@ -16,9 +16,9 @@ SOURCES_TYPES = {
     }
 
 DEFAULT_TOPICS = {
-    'camera_info' : "/fbot_vision/bvb/camera_info",
-    'image_rgb' : "/fbot_vision/bvb/image_rgb",
-    'image_depth': "/fbot_vision/bvb/image_depth",
+    'camera_info' : " /camera/camera/color/image_raw",
+    'image_rgb' : "/camera/camera/color/camera_info",
+    'image_depth': "/camera/camera/aligned_depth_to_color/image_raw",
 }
 class BaseRecognition(Node):
     def __init__(self, packageName='fbot_recognition', nodeName='base_recognition'):
